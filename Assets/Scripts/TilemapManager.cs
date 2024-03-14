@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -30,8 +31,25 @@ public class TilemapManager : MonoBehaviour
             {
                 _position = _origin + new Vector3Int(x, y);
                 Gizmos.color = datas[x,y].IsValid ? Color.green : Color.red;
+                if (datas[x, y].Hover)
+                    Gizmos.color = Color.yellow; 
                 Gizmos.DrawSphere(_position, .5f); 
             }
         }
+    }
+
+    public void GetTileData(Vector3 _position)
+    {
+        if(datas is null) return;
+        _position -= tilemap.origin; 
+        Vector3Int _intPosition = new Vector3Int((int)_position.x, (int)_position.y, 0);
+        if(_intPosition.x >= 0 && 
+           _intPosition.y >= 0 && 
+           _intPosition.x < datas.GetLength(0) && 
+           _intPosition.y < datas.GetLength(1) )
+        {
+            datas[_intPosition.x, _intPosition.y].Hover = true; 
+        }
+
     }
 }
