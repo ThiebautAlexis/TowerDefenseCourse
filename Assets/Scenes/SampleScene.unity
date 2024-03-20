@@ -198,7 +198,19 @@ MonoBehaviour:
     m_ActionId: 045521d0-9709-47d7-925c-33bf5b61fb07
     m_ActionName: PlacementMap/Position[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 200905923}
+        m_TargetAssemblyTypeName: BuildingPlacement, Assembly-CSharp
+        m_MethodName: ValidateBuilding
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c3cfa8c3-9543-45c7-82b8-2d5990361643
     m_ActionName: PlacementMap/Validate[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
@@ -220,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
   tilemapManager: {fileID: 741036001}
+  building: {fileID: 5499522165294868006, guid: 49a25cec773f8654481f8883d77213dc, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,9 +38,9 @@ public class TilemapManager : MonoBehaviour
         }
     }
 
-    public void GetTileData(Vector3 _position)
+    public TilemapData GetTileData(Vector3 _position)
     {
-        if(datas is null) return;
+        if(datas is null) return null;
         _position -= tilemap.origin; 
         Vector3Int _intPosition = new Vector3Int((int)_position.x, (int)_position.y, 0);
         if(_intPosition.x >= 0 && 
@@ -48,8 +48,13 @@ public class TilemapManager : MonoBehaviour
            _intPosition.x < datas.GetLength(0) && 
            _intPosition.y < datas.GetLength(1) )
         {
-            datas[_intPosition.x, _intPosition.y].Hover = true; 
+            return datas[_intPosition.x, _intPosition.y]; 
         }
+        return null; 
+    }
 
+    public Vector2Int GetTilePosition(Vector2 _position)
+    {
+        return new Vector2Int(Mathf.RoundToInt(_position.x - .5f), Mathf.RoundToInt(_position.y - .5f));
     }
 }
