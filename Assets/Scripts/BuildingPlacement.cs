@@ -9,7 +9,7 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private Building building;
     private Vector2 mousePositionWorld;
     private Building previewBuilding;
-    private TilemapData tileData = null; 
+    private TilemapData tileData = null;
     public void GetMousePosition(InputAction.CallbackContext _context)
     {
         mousePositionWorld = camera.ScreenToWorldPoint(_context.ReadValue<Vector2>());
@@ -17,18 +17,20 @@ public class BuildingPlacement : MonoBehaviour
         {
             previewBuilding.transform.position = (Vector3Int)tilemapManager.GetTilePosition(mousePositionWorld);
         }
-        tileData = tilemapManager.GetTileData(mousePositionWorld); 
+        tileData = tilemapManager.GetTileData(mousePositionWorld);
     }
 
     public void ValidateBuilding(InputAction.CallbackContext _context)
     {
         if(_context.performed)
         {
-            if(tileData != null && tileData.IsValid)
+            if (tileData != null && tileData.IsValid)
             {
-                tileData.Building = previewBuilding; 
+                tileData.Building = previewBuilding;
+                previewBuilding.ActivateBuilding();
                 previewBuilding = null;
-
+                tileData = null;
+                
                 InstantiatePreview(building); 
             }
         }

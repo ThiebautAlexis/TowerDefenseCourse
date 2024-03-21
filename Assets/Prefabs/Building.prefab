@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23f6107217716a4bae861acd897cca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerCooldown: 3
+  spriteRenderer: {fileID: 6803857752324086314}
 --- !u!1 &5663811670993032785
 GameObject:
   m_ObjectHideFlags: 0

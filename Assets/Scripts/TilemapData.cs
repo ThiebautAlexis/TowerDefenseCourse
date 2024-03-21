@@ -16,7 +16,7 @@ public class TilemapData
         get { return building; }
         set 
         {
-            if(building != null)
+            if(building == null)
                 building = value;
         }
     }

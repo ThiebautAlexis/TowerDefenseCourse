@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
   tilemapManager: {fileID: 741036001}
-  building: {fileID: 5499522165294868006, guid: 49a25cec773f8654481f8883d77213dc, type: 3}
+  building: {fileID: 6599224373931391490, guid: b8c728f448e43b64ca909893defb2705, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
