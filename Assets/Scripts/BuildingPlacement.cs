@@ -12,6 +12,7 @@ public class BuildingPlacement : MonoBehaviour
     private TilemapData tileData = null;
     public void GetMousePosition(InputAction.CallbackContext _context)
     {
+        Debug.Log("Test"); 
         mousePositionWorld = camera.ScreenToWorldPoint(_context.ReadValue<Vector2>());
         if(previewBuilding != null)
         {
